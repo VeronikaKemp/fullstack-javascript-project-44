@@ -21,7 +21,7 @@ for (let i = 0; i < 3; i += 1) {
   const randomOperator = operator[randomIndex];
   console.log(`Question: ${number1} ${randomOperator} ${number2}`);
 
-  let result = '';
+  let result;
   switch (randomOperator) {
     case '+':
       result = number1 + number2;
@@ -34,12 +34,11 @@ for (let i = 0; i < 3; i += 1) {
       break;
   }
 
+  const check = result.toString();
+
   const userAnswer = readlineSync.question('Your answer: ');
 
-  result.toString();
-  userAnswer.toString();
-
-  if (result === userAnswer) {
+  if (check === userAnswer) {
     console.log('Correct');
   } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.
