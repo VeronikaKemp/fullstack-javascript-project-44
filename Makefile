@@ -8,3 +8,5 @@ lint: # linter
 	npx eslint .
 brain-even: #start brain-even
 	node bin/brain-even.js
+brain-calc: #start brain-calc
+	node bin/brain-calc.js
