@@ -4,21 +4,22 @@ const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min) + min)
 
 function getQuestionandAnswer() {
   const arrLength = getRandomInt(5, 9);
-  const question = [];
+  const questionArr = [];
   const firstNum = getRandomInt(0, 100);
-  question.push(firstNum);
+  questionArr.push(firstNum);
   const progressionStep = getRandomInt(1, 50);
   let nextNum = firstNum + progressionStep;
-  question.push(nextNum);
-  for (let i = question.length; i < arrLength; i += 1) {
+  questionArr.push(nextNum);
+  for (let i = questionArr.length; i < arrLength; i += 1) {
     nextNum += progressionStep;
-    question.push(nextNum);
+    questionArr.push(nextNum);
   }
-  const randomIndex = getRandomInt(0, question.length);
-  const correctAnswer = question[randomIndex];
+  const randomIndex = getRandomInt(0, questionArr.length);
+  const correctAnswer = questionArr[randomIndex];
   const rightAnswer = correctAnswer.toString();
   const replacement = '..';
-  question[randomIndex] = replacement;
+  questionArr[randomIndex] = replacement;
+  const question = questionArr.join(' ');
   return [question, rightAnswer];
 }
 
