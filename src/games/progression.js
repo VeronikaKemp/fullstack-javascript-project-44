@@ -3,7 +3,7 @@ const rules = 'What number is missing in the progression?';
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
 
 function getQuestionandAnswer() {
-  const arrLength = getRandomInt(4, 9);
+  const arrLength = getRandomInt(5, 9);
   const question = [];
   const firstNum = getRandomInt(0, 100);
   question.push(firstNum);
