@@ -4,8 +4,10 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function gcd(a, b) {
+function gcd(num1, num2) {
   let divisor;
+  let a = num1;
+  let b = num2;
   if (a === 0) {
     divisor = b;
   } else if (b === 0) {
