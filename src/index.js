@@ -11,7 +11,7 @@ export default (rules, getData) => {
   const iterations = 3;
   for (let i = 0; i < iterations; i += 1) {
     const [questionNum, rightAnswer] = getData();
-    console.log(`Question ${questionNum}`);
+    console.log(`Question: ${questionNum}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (rightAnswer === userAnswer) {
       console.log('Correct');
