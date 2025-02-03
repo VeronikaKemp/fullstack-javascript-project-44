@@ -1,6 +1,6 @@
-const rules = 'What number is missing in the progression?';
+import getRandomInt from '../utils.js';
 
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min) + min);
+const rules = 'What number is missing in the progression?';
 
 function getQuestionandAnswer() {
   const arrLength = getRandomInt(5, 9);

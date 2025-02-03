@@ -1,11 +1,9 @@
+import getRandomInt from '../utils.js';
+
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
-
 function getQuestionandAnswer() {
-  const question = getRandomInt(100);
+  const question = getRandomInt(0, 100);
   let rightAnswer;
   const numSqrt = Math.sqrt(question);
   if (question < 2) {

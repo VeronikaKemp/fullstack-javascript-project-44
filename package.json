@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/VeronikaKemp/fullstack-javascript-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/VeronikaKemp/fullstack-javascript-project-44/actions)",
+  "description": "The set of three games, with three rounds in each.",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -11,14 +11,10 @@
     "brain-prime": "bin/brain-prime.js"
   },
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/VeronikaKemp/fullstack-javascript-project-44.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VeronikaKemp/fullstack-javascript-project-44/issues"

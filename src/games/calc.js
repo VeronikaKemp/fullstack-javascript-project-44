@@ -1,8 +1,6 @@
-const rules = 'What is the result of the expression?';
+import getRandomInt from '../utils.js';
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
+const rules = 'What is the result of the expression?';
 
 function calc(number1, number2, randomOperator) {
   let result;
@@ -20,10 +18,10 @@ function calc(number1, number2, randomOperator) {
   return result;
 }
 function getQuestionandAnswer() {
-  const number1 = getRandomInt(50);
-  const number2 = getRandomInt(50);
+  const number1 = getRandomInt(0, 50);
+  const number2 = getRandomInt(0, 50);
   const operator = ['+', '-', '*'];
-  const randomIndex = getRandomInt(2);
+  const randomIndex = getRandomInt(0, 2);
   const randomOperator = operator[randomIndex];
   const question = `${number1} ${randomOperator} ${number2}`;
   const correctAnswer = (calc(number1, number2, randomOperator)).toString();

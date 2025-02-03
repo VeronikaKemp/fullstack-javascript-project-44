@@ -1,8 +1,6 @@
-const rules = 'Find the greatest common divisor of given numbers.';
+import getRandomInt from '../utils.js';
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
+const rules = 'Find the greatest common divisor of given numbers.';
 
 function gcd(num1, num2) {
   let divisor;
@@ -26,8 +24,8 @@ function gcd(num1, num2) {
 }
 
 function getQuestionandAnswer() {
-  const number1 = getRandomInt(50);
-  const number2 = getRandomInt(50);
+  const number1 = getRandomInt(0, 50);
+  const number2 = getRandomInt(0, 50);
   const question = `${number1} ${number2}`;
   const correctAnswer = (gcd(number1, number2));
   const rightAnswer = correctAnswer.toString();
