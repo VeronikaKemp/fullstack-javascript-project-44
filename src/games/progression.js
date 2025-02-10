@@ -2,18 +2,19 @@ import getRandomInt from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
 
-function getQuestionandAnswer() {
-  const arrLength = getRandomInt(5, 9);
-  const questionArr = [];
-  const firstNum = getRandomInt(0, 100);
-  questionArr.push(firstNum);
-  const progressionStep = getRandomInt(1, 50);
-  let nextNum = firstNum + progressionStep;
-  questionArr.push(nextNum);
-  for (let i = questionArr.length; i < arrLength; i += 1) {
-    nextNum += progressionStep;
-    questionArr.push(nextNum);
+const makeProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
   }
+  return progression;
+};
+
+function getQuestionandAnswer() {
+  const length = getRandomInt(5, 9);
+  const firstNum = getRandomInt(0, 100);
+  const step = getRandomInt(1, 50);
+  const questionArr = makeProgression(firstNum, step, length);
   const randomIndex = getRandomInt(0, questionArr.length);
   const correctAnswer = questionArr[randomIndex];
   const rightAnswer = correctAnswer.toString();

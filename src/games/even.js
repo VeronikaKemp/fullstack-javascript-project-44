@@ -3,14 +3,9 @@ import getRandomInt from '../utils.js';
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 function getQuestionandAnswer() {
+  const isEven = (number) => number % 2 === 0;
   const question = getRandomInt(0, 100);
-  const check = question % 2;
-  let rightAnswer = '';
-  if (check === 0) {
-    rightAnswer = 'yes';
-  } else {
-    rightAnswer = 'no';
-  }
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 }
 

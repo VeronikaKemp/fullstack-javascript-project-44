@@ -2,23 +2,25 @@ import getRandomInt from '../utils.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function getQuestionandAnswer() {
-  const question = getRandomInt(0, 100);
-  let rightAnswer;
-  const numSqrt = Math.sqrt(question);
-  if (question < 2) {
-    rightAnswer = 'no';
+const isPrime = (number) => {
+  const numSqrt = Math.sqrt(number);
+  if (number < 2) {
+    return false;
   }
-  if (question % 2 === 0 && question !== 2) {
-    rightAnswer = 'no';
+  if (number % 2 === 0 && number !== 2) {
+    return false;
   }
   for (let i = 2; i <= numSqrt; i += 1) {
-    if (question % i === 0) {
-      rightAnswer = 'no';
-      return [question, rightAnswer];
+    if (number % i === 0) {
+      return false;
     }
   }
-  rightAnswer = 'yes';
+  return true;
+};
+
+function getQuestionandAnswer() {
+  const question = getRandomInt(0, 100);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, rightAnswer];
 }
 

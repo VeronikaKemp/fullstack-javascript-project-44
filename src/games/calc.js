@@ -11,9 +11,11 @@ function calc(number1, number2, randomOperator) {
     case '-':
       result = number1 - number2;
       break;
-    default:
+    case '*':
       result = number1 * number2;
       break;
+    default:
+      throw new Error(`Invalid operator - ${randomOperator}`);
   }
   return result;
 }
